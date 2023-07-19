@@ -53,7 +53,7 @@ const isPlainObject = (obj: any) => {
 
 // 请求拦截器
 const interceptorsRequest = (config: { url: string; options?: RequestInit }) => {
-  console.log('请求拦截器', config)
+  // console.log('请求拦截器', config)
   const options = {
     ...config.options,
     headers: {
@@ -66,7 +66,7 @@ const interceptorsRequest = (config: { url: string; options?: RequestInit }) => 
 
 // 响应拦截器
 const interceptorsResponse = async <T>(options: any, response: any): Promise<ResponseData<T>> => {
-  console.log('响应拦截器：', options, response)
+  // console.log('响应拦截器：', options, response)
   let data: ResponseData<T> = await response.json()
 
   if (!isResponseData(data)) {
