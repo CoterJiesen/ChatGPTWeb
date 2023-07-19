@@ -126,6 +126,7 @@ ${JSON.stringify(response, null, 4)}
     }
     const reader = response.body?.getReader?.()
     let allContent = ''
+    let remainBefore = ''
     while (true) {
       const { done, value } = (await reader?.read()) || {}
       if (done) {
@@ -134,10 +135,11 @@ ${JSON.stringify(response, null, 4)}
         break
       }
       // 将获取到的数据片段显示在屏幕上
-      const text = new TextDecoder('utf-8').decode(value)
-      const texts = handleChatData(text)
-      for (let i = 0; i < texts.length; i++) {
-        const { dateTime, role, content, segment } = texts[i]
+      const text = remainBefore + new TextDecoder('utf-8').decode(value)
+      const {data, remain} = handleChatData(text);
+      remainBefore = remain;
+      for (let i = 0; i < data.length; i++) {
+        const { dateTime, role, content, segment } = data[i]
         allContent += content ? content : ''
         if (segment === 'stop') {
           setFetchController(null)
