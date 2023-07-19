@@ -40,12 +40,6 @@ const web = [
     name: '商城',
     icon: <ShopOutlined />,
     message: '账户余额和充值套餐记录'
-  },
- {
-     path: 'https://github.com/vastxie/ChatGpt-Web',
-    name: '项目地址',
-     icon: <GithubOutlined />,
-     message: '免费开源可商业化AIWeb项目'
   }
 ]
 
