@@ -59,7 +59,7 @@ router.get('/send_sms', async (req, res) => {
             </div>
             <p style="font-size: 16px; color: #111; text-align: center; line-height: 1.5;">此验证码将在 10 分钟后失效，非本人操作请忽略。</p>
             <hr style="border: none; border-top: 1px solid #eaeaea; margin: 30px 0;">
-            <p style="font-size: 14px; color: #999; text-align: center;">点击访问：<a href="https://ai.lightai.io" style="color: #007AFF; text-decoration: none;">AI 助手</a></p>
+            <p style="font-size: 14px; color: #999; text-align: center;">点击访问：<a href="https://chat.go2world.icu" style="color: #007AFF; text-decoration: none;">AI 助手</a></p>
         </div>
 `;
         if (emailRegex.test(source)) {
